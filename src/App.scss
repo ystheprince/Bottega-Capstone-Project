@@ -1,0 +1,77 @@
+:root {
+  --mainBlue: #2a2a72;
+  --lightBlue: #009ffd;
+  --mainWhite: #000000;
+  --mainDark: #a71d05;
+  --mainYellow: #ffa400;
+}
+
+body {
+  font-family: "Oswald", sans-serif !important;
+  background: var(--mainWhite) !important;
+  color: var(--mainDark) !important;
+}
+@font-face {
+  font-family: "another_americaregular";
+  src: url("/fonts/another_america-webfont.woff2") format("woff2"),
+    url("/fonts/another_america-webfont.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+.text-title {
+  font-family: "another_americaregular";
+  letter-spacing: 0.3;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.text-blue {
+  color: var(--mainBlue);
+}
+
+.text-bright {
+  color: var(--lightBlue);
+}
+
+.btn-black {
+  background: transparent;
+  text-transform: capitalize;
+  font-size: 0.8rem !important;
+  color: var(--mainDark);
+  border-radius: 0 !important	;
+  border: 0.1rem solid var(--mainDark) !important;
+}
+
+.customLabel{
+   color:#fff!important;
+}
+
+.btn-black:hover {
+  background: var(--mainDark) !important;
+  color: var(--mainWhite) !important;
+}
+
+.cart-icon {
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--mainYellow);
+}
+
+.table tr th, .table tr td{
+  color: #fff!important;
+}
+
+/* The Modal (background) */
+.cmodal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
