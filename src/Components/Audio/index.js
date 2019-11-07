@@ -14,10 +14,9 @@ export default class Audio extends Component {
     }
 
     togglePlay() {
-        this.setState({'play': !this.state.play}, () => {
+        this.setState({'play': !this.state.play,'songName':globalAudio.songName(this.state.name)}, () => {
             this.state.play ? globalAudio.play(this.state.name) : globalAudio.pause(this.state.name);
         });
-        console.log(this.getSongName ());
     }
 
     componentWillUnmount () {
@@ -32,16 +31,14 @@ export default class Audio extends Component {
 
     playNext(){
         let s_next = globalAudio.next(this.state.name);
-        this.setState({'play':true,name:s_next});
+        this.setState({'play':true,name:s_next,'songName':globalAudio.songName(this.state.name)});
         globalAudio.play(this.state.name);
-        console.log(this.getSongName ());
     }
 
     playPrevious(){
         let s_next = globalAudio.previous(this.state.name);
-        this.setState({'play':true,name:s_next});
+        this.setState({'play':true,name:s_next,'songName':globalAudio.songName(this.state.name)});
         globalAudio.play(this.state.name);
-        console.log(this.getSongName ());
     }
 
     getSongName (){

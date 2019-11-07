@@ -1,13 +1,19 @@
 import React, {Component} from "react";
 import Title from "../Title";
 export default class Orders extends Component {
+    deleteOrder = (i) => {
 
-    constructor(props) {
-        super(props);
-        this.state = {
+        const data = localStorage.getItem('orders') ? JSON.parse(localStorage.getItem('orders')) : [];
+        let new_data = [];
 
-        };
-    }
+        data.map((order,j) =>{
+            if (i===j){ return null;}else{
+                return new_data.push(order);
+            }
+        });
+        localStorage.setItem("orders", JSON.stringify(new_data));
+        window.location.href="/admin/orders";
+    };
 
 
     render() {
@@ -58,6 +64,12 @@ export default class Orders extends Component {
                                                     }}
                                             >
                                                 View Order Products
+                                            </button>
+                                            &nbsp;&nbsp;
+                                            <button className="btn btn-danger btn-sm"
+                                                onClick={ () => {this.deleteOrder(i) } }
+                                            >
+                                                Delete
                                             </button>
                                         </td>
                                     </tr>

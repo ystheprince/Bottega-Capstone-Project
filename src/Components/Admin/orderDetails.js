@@ -3,14 +3,6 @@ import Title from "../Title";
 
 export default class OrdersDetails extends Component {
 
-    constructor(props) {
-        super(props);
-        this.state = {
-
-        };
-    }
-
-
     render() {
 
         const data = localStorage.getItem('orders') ? JSON.parse(localStorage.getItem('orders')) : [];

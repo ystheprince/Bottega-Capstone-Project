@@ -88,10 +88,10 @@ const previous = (from) => {
 };
 
 const songName = (id) =>{
-    let song="";
+    let song="BKScandalous Switch Sides";
 
     if(!id){
-        song="";
+        song="BKScandalous Switch Sides";
     }
     if(audios[id]) {
         if(id===1){
@@ -103,6 +103,8 @@ const songName = (id) =>{
         }else if(id===4){
             song="BKScandalous Proud Of Me";
         }else if(id===5){
+            song="BKScandalous Switch Sides";
+        }else{
             song="BKScandalous Switch Sides";
         }
     }

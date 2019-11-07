@@ -4,10 +4,28 @@ import { Link } from "react-router-dom";
 import { ButtonContainer } from "../Button";
 
 export default class Details extends Component {
+
+  getItem = (products, id) => {
+    const product = products.find(item => item.id === parseInt(id));
+    return product;
+  };
+
   render() {
     return (
       <ProductConsumer>
         {value => {
+
+          let product_id=0;
+          let productData={};
+
+          if(this.props.match.params.hasOwnProperty("id")) {
+            product_id = this.props.match.params.id;
+          }
+
+          if (value.products && value.products.length > 0) {
+            productData = this.getItem(value.products, product_id);
+          }
+
           const {
             id,
             company,
@@ -16,7 +34,8 @@ export default class Details extends Component {
             price,
             inCart,
             title
-          } = value.detailProduct;
+          } = productData;
+
           return (
             <div className="container py-5">
               {/*title*/}
