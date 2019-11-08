@@ -2,6 +2,7 @@ import React from "react";
 import { Navbar, Nav, NavDropdown, Button } from "react-bootstrap";
 import Audio from "../Audio";
 import NavItem from "react-bootstrap/NavItem";
+import {Link} from 'react-router-dom';
 
 export default function NavBars() {
   return (
@@ -23,7 +24,9 @@ export default function NavBars() {
 
           <Nav className="pull-right">
             <NavItem href="#" onClick={(e)=>{ e.preventDefault();}}><Audio/></NavItem>
-            <NavItem href="/cart"><Button variant="outline-dark">Cart</Button></NavItem>
+            <Link to="/cart">
+              <Button variant="outline-dark">Cart</Button>
+            </Link>
           </Nav>
         </Navbar.Collapse>
       </Navbar>
