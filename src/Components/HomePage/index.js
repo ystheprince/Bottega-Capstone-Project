@@ -6,24 +6,29 @@ import Typist from "react-typist-updated";
 
 export default function HomePage() {
   return (
-    <div>
-      <Grid className="home">
-        <Cell col={12}>
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center"
-            }}
-          >
-            <Link to="/home">
-              <Typist className="typeWriter">
-                Enter <Typist.Delay ms={500} /> Site
-              </Typist>
-            </Link>
+      <section>
+          <div className="container">
+              <div className="col-md-12">
+                  <Grid className="home">
+                    <Cell col={12}>
+                      <div
+                        style={{
+                          display: "flex",
+                          justifyContent: "center",
+                          alignItems: "center"
+                        }}
+                      >
+                        <Link to="/home">
+                          <Typist className="typeWriter">
+                            Enter <Typist.Delay ms={500} /> Site
+                          </Typist>
+                        </Link>
+                      </div>
+                    </Cell>
+                  </Grid>
+              </div>
           </div>
-        </Cell>
-      </Grid>
-    </div>
+      </section>
+
   );
 }
