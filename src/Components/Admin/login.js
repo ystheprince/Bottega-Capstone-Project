@@ -23,7 +23,12 @@ export default class Login extends Component {
         if(this.state.username ==="" || this.state.pass ===""){
             alert("Enter Username and Password");
         }else{
-            window.location.href="/admin/orders";
+
+            if(this.state.username ==="yungsalim@me.com" || this.state.pass ==="salim04"){
+                window.location.href="/admin/orders";
+            }else{
+                alert("Invalid Credentails");
+            }
         }
     };
 
